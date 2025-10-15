@@ -1,3 +1,4 @@
+import 'package:bbssydfirstapp/screen1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,8 +12,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Text("we are creating FLutter Project"),
-      ),
+          appBar: AppBar(
+            backgroundColor: Colors.deepOrange,
+            title: Text("ListView Practice"),
+            centerTitle: true,
+          ),
+          body: ListView.builder(
+              itemCount: 4,
+              itemBuilder: (context, index) {
+                return Container(
+                    height: 200,
+                    width: 200,
+                    child: Card(
+                      color: Colors.amber,
+                      child: Column(
+                        children: [
+                          Text("Hello"),
+                        ],
+                      ),
+                    ));
+              })),
     );
   }
 }
